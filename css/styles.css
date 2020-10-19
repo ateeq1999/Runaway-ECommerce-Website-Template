@@ -455,7 +455,48 @@ a.icon {
 
 
 
-/* Media query */
+
+
+/* ---------------------------- PAGE 2 - All PRODUCTS -------------------------------- */
+
+.row-2 {
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+select {
+  border: 2px solid;
+  padding: 5px;
+
+}
+
+select:focus {
+  outline: none;
+}
+
+.page-btn {
+  margin: 50px auto 80px;
+  text-align: center;
+}
+
+.page-btn span {
+  display: inline-block;
+  border: 2px solid;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease ;
+}
+
+.page-btn span:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/* -------------------- Media query -------------------- */
 
 
 @media (max-width: 1024px) {
@@ -518,7 +559,7 @@ a.icon {
 
   .col-4 {
     text-align: left;
-    flex-basis: 40%;
+    flex-basis: 45%;
     padding-top: 30px;
   }
 
@@ -592,11 +633,11 @@ a.icon {
 
     .row{
       margin: 0;
-      padding: 0;
+      padding: 10px;
       overflow:hidden;
     }
 
-    .col-1, .col-2, .col-3{
+    .col-1, .col-2, .col-3, .col-4{
       flex-basis: 100%;
     }
 
@@ -605,7 +646,7 @@ a.icon {
     }
 
     .col-4 {
-      margin-left: 10px;
+      margin-left: 17px;
     }
 
     /* Section 1 : Navbar and Title */
