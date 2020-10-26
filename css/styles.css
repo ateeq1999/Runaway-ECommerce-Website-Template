@@ -8,7 +8,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-
+  --nav-load-time: 1s;
 }
 
 hr.dotted {
@@ -23,19 +23,34 @@ hr.dotted {
 
 /* Section-1 : Title */
 
+.icon {
+  display: none;
+}
 
 .navbar {
   position: relative;
   padding: 45px 30px;
 }
 
+
+
 .navbar h1 {
   position: absolute;
   top: 45px;
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 35px;
+  animation: nav-h1-load var(--nav-load-time) ease-out;
   transition: color 0.5s ease-out, font-size 1s ease-out;
 }
+
+  @keyframes nav-h1-load {
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
 
 .navbar
   h1:hover{
@@ -51,7 +66,17 @@ nav {
 nav ul {
   display: inline-block;
   list-style-type: none;
+  animation: nav-ul-load var(--nav-load-time) ease-out;
 }
+
+  @keyframes nav-ul-load {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 nav ul li {
   display: inline-block;
@@ -69,6 +94,8 @@ nav ul li a{
 nav ul li a:hover {
   color: #b22222;
 }
+
+
 
 .container {
   max-width: 1300px;
@@ -128,7 +155,7 @@ nav ul li a:hover {
   border: 2px solid;
   border-radius: 10px;
   outline: none;
-
+  transition: all 0.5s ease;
 }
 
 .login {
@@ -142,7 +169,7 @@ nav ul li a:hover {
   border: 2px solid;
   border-radius: 10px;
   outline: none;
-
+  transition: all 0.5s ease;
 }
 
 .btn
@@ -222,7 +249,7 @@ nav ul li a:hover {
 }
 
 .col-4 p {
-  font-size: 1em;
+  font-size: 1.0em;
   padding: 5px 0 3px;
 }
 
@@ -295,6 +322,7 @@ nav ul li a:hover {
   border-radius: 20px;
   background: black;
   color: #fff;
+  transition: all 0.5s ease;
 }
 
 .buy-now-btn:hover {
@@ -303,6 +331,9 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+.buy-now-btn:focus {
+  outline: none;
+}
 /* Section 5 : Testimonials */
 
 
@@ -521,16 +552,26 @@ select:focus {
 
   nav ul li {
     display: block;
-    padding-top: 5px;
-    margin: 10px 0 10px 0;
+    margin: 0;
+    padding: 15px 10px;
   }
 
   nav ul li a {
     color: #fff;
   }
 
-  a.icon {
+  nav ul li a:hover{
+    color: #505050;
+  }
+
+  nav ul li a:focus{
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .icon {
     padding: 10px 12px;
+    border: none;
     border-radius: 100%;
     background: black;
     color: #fff;
@@ -540,9 +581,10 @@ select:focus {
     top: 40px;
   }
 
-  .navbar a:hover {
-    color: black;
+  .icon:focus{
+    outline: none;
   }
+
 
   .navbar .icon:hover{
     color: #b22222;
@@ -633,7 +675,7 @@ select:focus {
 
     .row{
       margin: 0;
-      padding: 10px;
+      padding: 0px;
       overflow:hidden;
     }
 
@@ -670,16 +712,24 @@ select:focus {
     }
 
     nav {
+      display: block;
       margin-top: 60px;
       background-color: black;
       border-radius: 0%;
     }
 
+    #menuItems {
+      display: none;
+    }
+
+    nav ul {
+      animation: none;
+    }
 
     nav ul li {
       display: block;
-      padding-top: 5px;
-      margin: 10px 0 10px 0;
+      margin: 0;
+      padding: 15px 10px;
     }
 
     nav ul li a {
@@ -687,7 +737,7 @@ select:focus {
     }
 
 
-    a.icon {
+    .icon {
       padding: 10px 12px;
       border-radius: 100%;
       background: black;
@@ -698,19 +748,21 @@ select:focus {
       top: 10px;
     }
 
+
+
     #home {
       border: 0;
       padding: 0;
     }
 
     .col-2 img {
-      max-width: 380px;
+      width: 100%;
       border-radius: 0;
-      margin: 20px auto 0;
+      margin: 20px 0 0;
     }
 
     .col-2 h1 {
-      padding: 0;
+      padding: 0 10px;
       margin: 20px 25px 15px;
       font-size: 2.8rem;
       line-height: 55px;
@@ -718,7 +770,7 @@ select:focus {
 
     .col-2 p {
       margin: 15px 25px;
-      padding: 0;
+      padding: 0 10px;
       color: #555555;
     }
 
@@ -730,7 +782,7 @@ select:focus {
     }
 
     .col-4 p {
-      font-size: 0.8em;
+      font-size: 0.95em;
       padding: 5px 0 3px;
     }
 
@@ -771,7 +823,7 @@ select:focus {
     }
 
     .offer-img {
-      max-width: 400px;
+      width: 100%;
       border-radius: 0;
     }
 
